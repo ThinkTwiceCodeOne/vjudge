@@ -1,3 +1,7 @@
+//This problem is straight forward. You just need to calculate next fibonacci and calculate the length. 
+//If you use int then it may cause overflow. Key is to use string and do addition in string
+
+
 #include <iostream>
 #include <string>
 
