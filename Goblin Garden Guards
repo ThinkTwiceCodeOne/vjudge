@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+int n;
+cin>>n;
+int temp=n;
+vector<vector<int>> arr(10001,vector<int>(10001,0));
+while(temp--)
+{
+int x,y;
+cin>>x>>y;
+arr[x][y]++;
+}
+int nos;
+cin>>nos;
+while(nos--)
+{
+int x,y,r;
+cin>>x>>y>>r;
+long long int x2=x*x;
+long long int y2=y*y;
+long long int xy=x*y;
+long long int r2=r*r;
+for(int j=max(x-r,0);j<=min(x+r,10000);j++)
+{
+for(int k=max(y-r,0);k<=min(y+r,10000);k++)
+{
+if(arr[j][k]>0 && (x2+j*j-2*x*j+y2+k*k-2*y*k)<=r2) 
+{
+//cout<<n<<endl;
+//cout<<arr[j][k]<<endl;
+n=n-arr[j][k];
+//cout<<n<<endl;
+arr[j][k]=0;
+}
+
+}
+}
+}
+cout<<n;
+return 0;
+}
